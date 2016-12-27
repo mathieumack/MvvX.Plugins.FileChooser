@@ -17,7 +17,7 @@
     <files>     
         <!-- ALL -->
         <file src="..\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.XML" target="lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch" />
-        <file src="..\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.dll" target="lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch" /> -->
+        <file src="..\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.dll" target="lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch" />
                 
         <!-- Windows (WPF)  -->
         <file src="..\MvvX.Plugins.FileChooser.Wpf\bin\Release\MvvX.Plugins.FileChooser.Wpf.XML" target="lib\net45" />
