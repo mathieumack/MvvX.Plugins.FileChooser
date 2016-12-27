@@ -12,6 +12,10 @@
         <description>Package for MvvmCross that can let you select file on your device (WPF only yet)</description>
         <tags>mvvm mvvmcross xamarin wpf</tags>
         <dependencies>
+          <group>
+            <!-- Always include regardless of target framework -->
+            <dependency id="MvvmCross.Platform" version="4.2.2" />
+        </group>
         </dependencies>  
     </metadata>
     <files>     
@@ -20,6 +24,8 @@
         <file src="..\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.dll" target="lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+monotouch" />
                 
         <!-- Windows (WPF)  -->
+        <file src="..\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.XML" target="lib\net45" />
+        <file src="..\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.dll" target="lib\net45" />
         <file src="..\MvvX.Plugins.FileChooser.Wpf\bin\Release\MvvX.Plugins.FileChooser.Wpf.XML" target="lib\net45" />
         <file src="..\MvvX.Plugins.FileChooser.Wpf\bin\Release\MvvX.Plugins.FileChooser.Wpf.dll" target="lib\net45" />
 		<file src="BootstrapContent\FileChooserPluginBootstrap.cs.pp" target="content\net45\Bootstrap\FileChooserPluginBootstrap.cs.pp" />
