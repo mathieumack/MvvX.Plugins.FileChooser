@@ -1,6 +1,6 @@
-﻿using Microsoft.Win32;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace MvvX.Plugins.FileChooser.Wpf
 {
@@ -8,7 +8,7 @@ namespace MvvX.Plugins.FileChooser.Wpf
     {
         public OpenFileResult OpenFiles(bool multiSelect)
         {
-            var fileDialog = new OpenFileDialog();
+            var fileDialog = new Microsoft.Win32.OpenFileDialog();
 
             fileDialog.Multiselect = multiSelect;
 
@@ -27,6 +27,27 @@ namespace MvvX.Plugins.FileChooser.Wpf
             }
             
             return new OpenFileResult()
+            {
+                Result = false
+            };
+        }
+
+
+        public OpenFolderResult OpenFolder()
+        {
+            var fileDialog = new FolderBrowserDialog();
+            
+            var result = fileDialog.ShowDialog();
+            if (result == DialogResult.OK || result == DialogResult.Yes)
+            {
+                return new OpenFolderResult()
+                {
+                    Result = true,
+                    SelectedPath = fileDialog.SelectedPath
+                };
+            }
+
+            return new OpenFolderResult()
             {
                 Result = false
             };

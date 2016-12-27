@@ -38,6 +38,7 @@
     <Compile Include="IFileChooser.cs" />
     <Compile Include="OpenFileResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OpenFolderResult.cs" />
     <Compile Include="SelectFileResult.cs" />
   </ItemGroup>
   <ItemGroup>

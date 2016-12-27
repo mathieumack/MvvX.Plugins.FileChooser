@@ -10,5 +10,11 @@ namespace MvvX.Plugins.FileChooser
         /// <param name="multiSelect"></param>
         /// <returns></returns>
         OpenFileResult OpenFiles(bool multiSelect);
+
+        /// <summary>
+        /// Allow the user to select a folder on your device
+        /// </summary>
+        /// <returns></returns>
+        OpenFolderResult OpenFolder();
     }
 }
