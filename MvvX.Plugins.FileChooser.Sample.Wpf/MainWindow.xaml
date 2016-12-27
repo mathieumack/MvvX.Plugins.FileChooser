@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Name="btnLogin" Content="Select files" Height="25" Width="50" Click="btnLogin_Click"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="25">
+            <CheckBox Name="chkMultipleFileSelection" Content="Select multiple files ?" IsChecked="True"></CheckBox>
+            <Button Name="btnFiles" Content="Select files" Height="25" Click="btnFiles_Click" Width="100"></Button>
+        </StackPanel>
+        <Button Name="btnFolder" Margin="25" Grid.Row="1" Content="Select folder" Height="25" Width="100" Click="btnFolder_Click"></Button>
     </Grid>
 </Window>

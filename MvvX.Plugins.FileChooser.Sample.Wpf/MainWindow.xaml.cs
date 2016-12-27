@@ -14,15 +14,28 @@ namespace MvvX.Plugins.FileChooser.Sample.Wpf
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnFiles_Click(object sender, RoutedEventArgs e)
         {
             IFileChooser fileChooser = new WpfFileChooser();
 
-            var result = fileChooser.OpenFiles(false);
+            var result = fileChooser.OpenFiles(chkMultipleFileSelection.IsChecked.Value);
             if (result.Result.Value)
             {
                 var files = string.Join(System.Environment.NewLine, result.SelectedFiles.Select(f => f.FilePath + " (" + f.FileSize + ")"));
                 MessageBox.Show(result.SelectedFiles.Count + " file(s) selected." + System.Environment.NewLine + files);
+            }
+            else
+                MessageBox.Show("Operation canceled");
+        }
+
+        private void btnFolder_Click(object sender, RoutedEventArgs e)
+        {
+            IFileChooser fileChooser = new WpfFileChooser();
+
+            var result = fileChooser.OpenFolder();
+            if (result.Result.Value)
+            {
+                MessageBox.Show("1 folder selected." + System.Environment.NewLine + result.SelectedPath);
             }
             else
                 MessageBox.Show("Operation canceled");
