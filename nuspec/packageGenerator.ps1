@@ -9,7 +9,7 @@ Set-Location -Path $locationNuspec
 "Packaging to nuget..."
 "Build folder : " + $location
 
-$strPath = $location + '\MvvX.Plugins.FileChooser\bin\MvvX.Plugins.FileChooser.dll'
+$strPath = $location + '\MvvX.Plugins.FileChooser\bin\Release\MvvX.Plugins.FileChooser.dll'
 
 $VersionInfos = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($strPath)
 $ProductVersion = $VersionInfos.ProductVersion
