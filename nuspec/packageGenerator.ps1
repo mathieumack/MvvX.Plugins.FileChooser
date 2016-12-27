@@ -9,7 +9,7 @@ Set-Location -Path $locationNuspec
 "Packaging to nuget..."
 "Build folder : " + $location
 
-$strPath = $location + '\FileChooser\bin\FileChooser.dll'
+$strPath = $location + '\MvvX.Plugins.FileChooser\bin\MvvX.Plugins.FileChooser.dll'
 
 $VersionInfos = [System.Diagnostics.FileVersionInfo]::GetVersionInfo($strPath)
 $ProductVersion = $VersionInfos.ProductVersion
@@ -17,7 +17,7 @@ $ProductVersion = $VersionInfos.ProductVersion
 
 "Update nuspec versions ..."
 	
-$nuSpecFile =  $locationNuspec + '\FileChooser.nuspec'
+$nuSpecFile =  $locationNuspec + '\MvvX.Plugins.FileChooser.nuspec'
 (Get-Content $nuSpecFile) | 
 Foreach-Object {$_ -replace "{BuildNumberVersion}", "$ProductVersion" } |
 Set-Content $nuSpecFile
@@ -28,4 +28,4 @@ Set-Content $nuSpecFile
 $apiKey = $env:NuGetApiKey
 	
 "Publish packages ..."	
-.\NuGet push FileChooser.$ProductVersion.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey $apiKey
+.\NuGet push MvvX.Plugins.FileChooser.$ProductVersion.nupkg -Source https://www.nuget.org/api/v2/package -ApiKey $apiKey
