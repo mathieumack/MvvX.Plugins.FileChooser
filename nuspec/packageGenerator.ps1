@@ -23,7 +23,7 @@ Foreach-Object {$_ -replace "{BuildNumberVersion}", "$ProductVersion" } |
 Set-Content $nuSpecFile
 
 "Generate nuget packages ..."
-.\NuGet.exe pack FileChooser.nuspec
+.\NuGet.exe pack MvvX.Plugins.FileChooser.nuspec
 
 $apiKey = $env:NuGetApiKey
 	
