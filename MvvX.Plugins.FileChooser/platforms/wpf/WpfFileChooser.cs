@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 
-namespace MvvX.Plugins.FileChooser.Wpf
+namespace MvvX.Plugins.FileChooser
 {
     public class WpfFileChooser : IFileChooser
     {
